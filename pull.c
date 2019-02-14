@@ -40,6 +40,7 @@ void printData(datos_t persona)
 
 void createPush(void)
 {
+	//Esto es un comentario
 	system("git status");
 	system("git commit -m 'making changes'");
 	system("git add .");
