@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 typedef  struct
 {
 	char name[10];
@@ -38,12 +40,11 @@ void printData(datos_t persona)
 
 void createPush(void)
 {
-	char str[] = "Succesful";
 	system("git status");
 	system("git commit -m 'making changes'");
 	system("git add .");
 	system("git push origin master");
-	system("echo %s",str);
+	system("echo Succesful");
 }
 
 
