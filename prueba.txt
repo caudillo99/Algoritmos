@@ -1,5 +1,0 @@
-Esto es una prueba para utilizar el comando nano en la termina de Windows con el
-bash y despues subirlo a github como practica en la linea de comandos.
-Mi nombre es Diego Caudillo Sanchez y tengo 21 anios de edad. Naci en Baja California
-el 26 de Diciembre de 1997. Y desde entonces he tenido una buena vida. Mi mama siempre se ha esforzado para sacarnos adelante a mis hermanos y a mi. Bueno es todo es todo por ahora tratare de seguir escribiendo mas hasta que se me acaben las ideas de la cabeza. 
-Mientras estoy escribiendo esto, estoy escuchando una cancion de Chris Brown, llamada Undicided, la cual me gusta mucho por su ritmo. 
