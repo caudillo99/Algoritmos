@@ -14,7 +14,7 @@ void printData(datos_t persona);
 void createPush(void);
 int main ()
 {
-
+	//Esto es un comentario
 	datos_t persona;
 	captura(&persona);
 	printData(persona);
