@@ -14,21 +14,21 @@ typedef struct
 
 /*Cabecera de las funciones*/
 void capturaDatos(animal_t* perro);
-int determinarProyeccionCiclico(animal_t perro, int* time_ciclico);
-void determinarProyeccionRecursivo(animal_t perro,int x, int * ans, int* time_recursivo);
+long int determinarProyeccionCiclico(animal_t perro, long int* time_ciclico);
+void determinarProyeccionRecursivo(animal_t perro,int x, long int * ans, long int* time_recursivo);
 
 int main(int argc, char const *argv[])
 {
     animal_t perro;
-    int total = 0, counter = 1, time_recursivo = 0, time_ciclico = 0; // variables para la función recursiva.
+    long int total = 0, counter = 1, time_recursivo = 0, time_ciclico = 0; // variables para la función recursiva.
     capturaDatos(&perro);       // captura de los datos 
     determinarProyeccionRecursivo(perro,counter, &total, &time_recursivo); // llamada a la función recursiva
     printf("**************************************************\n");
-    printf("Proyeccion en %d a%cos (Ciclico): %ld\n",perro.proyeccion, 164,determinarProyeccionCiclico(perro, &time_ciclico)); //impresion de los datos
-    printf("Proyeccion en %d a%cos (Recursivo): %ld\n",perro.proyeccion, 164, total/2) ;
+    printf("Proyecci%cn en %d a%cos (Ciclico): %ld\n",162, perro.proyeccion, 164,determinarProyeccionCiclico(perro, &time_ciclico)); //impresion de los datos
+    printf("Proyecci%cn en %d a%cos (Recursivo): %ld\n",162, perro.proyeccion, 164, total/2) ;
     /*impresión de los tiempos de cada función*/
-    printf("Tiempo en funci%cn recursivo = %ld ms\n",164, time_ciclico);
-    printf("Tiempo en funci%cn recursivo = %ld ms\n",164, time_recursivo);
+    printf("Tiempo en funci%cn ciclico = %ld ms\n",162, time_ciclico);
+    printf("Tiempo en funci%cn recursivo = %ld ms\n",162, time_recursivo);
     return 0;
 }
 /*
@@ -56,7 +56,7 @@ void capturaDatos(animal_t* perro)
         al año, el tamaño de la camada, asi como la años de proyección
         time_ciclo: variable donde se guarda el tiempo de ejecución de la función
 */
-int determinarProyeccionCiclico(animal_t perro, int* time_ciclico)
+long int determinarProyeccionCiclico(animal_t perro, long int* time_ciclico)
 {
     int i, total = 0;
     /* el ciclo do-while se ejecuta mientras la proyeccion se mayor a 0.
@@ -87,7 +87,7 @@ int determinarProyeccionCiclico(animal_t perro, int* time_ciclico)
         total: vatiable en la cual se guarda el resultado de la proyeccion.
         time_recursivo: variable donde se guarda el tiempo de ejecución de la función
 */
-void determinarProyeccionRecursivo(animal_t perro,int counter, int* total, int *time_recursivo)
+void determinarProyeccionRecursivo(animal_t perro,int counter, long int* total, long int *time_recursivo)
 {
     if(perro.proyeccion == 0) *total = 1;    // Si el año de proyeccion es 0, inmediatamente el 
     // resultado es 1 ya que solo se esta contando a la hembra     
