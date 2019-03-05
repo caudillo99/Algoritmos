@@ -1,2 +1,1 @@
-# Algoritmos
-# Esto es una prueba para subir un archivo en git.
+# Respositorio para subir las practica y archivos de Algoritmos y Estructuras de datos.
