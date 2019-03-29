@@ -14,8 +14,9 @@ un palíndromo o no.
 
 /*Librerias utilizadas*/
 #include <stdio.h>
-#include <stdlib.h>
+#include <time.h>
 #include <string.h>
+#include <ctype.h>
 
 /*Headers*/
 void deleteSpace(char* array);
@@ -27,18 +28,24 @@ void printStack(int size, char* stack);
 /*Funcion main, donde se ejecutan todas los metodos creados*/
 int main(int argc, char const *argv[])
 {
-    char array[20] = {0};
-    int opc;
-    while(opc != 0)
+    char array[20] = {0}, opc;
+    clock_t exe_time;
+
+    while(opc != '0')
     {
+        //system("cls");
         printf("Ingrese palabra: ");
         gets(array);
         deleteSpace(array);
         // si devuelve -1 no es palindrome, caso contrario si lo es.
+        exe_time = clock();
         if(palindrome(array) == -1) printf("==========================\n==== No es palindrome ====\n==========================\n");
         else printf("=========================\n===== Es palindrome =====\n=========================\n");
+        exe_time = clock() - exe_time;
+        printf("Tiempo de ejecucion %lf segundos\n", ((double)exe_time)/CLOCKS_PER_SEC);
         setbuf(stdin, 0);
-        printf("Presiones '0' si quiere salir... "); scanf("%d", &opc);
+        printf("Presiones '0' si quiere salir... "); 
+        opc = getchar();
         setbuf(stdin, 0);
     } 
     return 0;
@@ -102,7 +109,7 @@ char pop(char* stack, int index)
 void printStack(int size, char* stack)
 {
     for(int i = 0; i < size; i++)
-           printf("|_%c_|\n", stack[i]);
+        printf("|_%c_|\n", stack[i]);
 }
 /*
     Descripcion
@@ -131,7 +138,7 @@ int palindrome(char* array)
             printf("Dato que salio: [%c]\n", letra);
             // Si el dato extraido de la pila no coincide con el dato del arreglo
             // entonces se devuelve un -1 indicando que la palabra no es palindrome.
-            if(letra != array[index]) 
+            if(toupper(letra) != toupper(array[index])) 
             {
                 printf("[%c] es diferente de [%c]\n", letra, array[index]);
                 return -1;
