@@ -156,6 +156,8 @@ int pop(char stack[][30], int* sp, char* data)
         -sp: apuntador de pila que posicion va ser limpiado.
 */
 void clrRow(char stack[][30], int sp)
+{ 
+    int i = 0;
     while(stack[sp][i] != 0)
     {
         stack[sp][i] = 0;
